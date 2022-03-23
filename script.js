@@ -22,17 +22,29 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// if (passwordLength <8) {
-//   alert("please enter more than 8 characters")
-//   return null
-// }
-
 function generatePassword (){
   var passLength = prompt("Please enter a number between 8 and 128 to set how long you want your password.")
     if (passLength < 8 || passLength > 128) {
       alert("Please... Make it between 8 and 128 characters...")
       generatePassword()
     }
+    var choice = confirm("lowercase?")
+      if (choice){
+        userSelections.lower=true
+        console.log(userSelections.lower);
+      }
+      if (choice){
+        userSelections.upper=true
+        console.log(userSelections.upper);
+      }
+      if (choice){
+        userSelections.numbers=true
+        console.log(userSelections.numbers);
+      }
+      if (choice){
+        userSelections.special=true
+        console.log(userSelections.special);
+      }
  // return password
 }
 
