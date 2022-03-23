@@ -19,8 +19,7 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
 
 function generatePassword (){
   var passLength = prompt("Please enter a number between 8 and 128 to set how long you want your password.")
@@ -28,25 +27,38 @@ function generatePassword (){
       alert("Please... Make it between 8 and 128 characters...")
       generatePassword()
     }
-    var choice = confirm("lowercase?")
+    var choice = confirm("Do you want lowercase characters in your password?")
       if (choice){
         userSelections.lower=true
         console.log(userSelections.lower);
       }
+      var choice = confirm("Wanna throw some upper case letters in the mix?")
       if (choice){
         userSelections.upper=true
         console.log(userSelections.upper);
       }
+      var choice = confirm("How about numbers?")
       if (choice){
         userSelections.numbers=true
         console.log(userSelections.numbers);
       }
+      var choice = confirm("Do you want special characters?")
       if (choice){
         userSelections.special=true
         console.log(userSelections.special);
       }
- // return password
-}
+      if (userSelections.lower === false && userSelections.upper === false && userSelections.numbers === false && userSelections.special === false){
+        alert("Please select at least one type of character.")
+        generatePassword()
+      }
+return;}
+
+
+
+
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 //1. create variables to save input from prompts
 //passwordLength - turn string into integer
