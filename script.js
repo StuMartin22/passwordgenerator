@@ -12,17 +12,12 @@ var userSelections = {
   numbers: undefined,
   special: undefined,
 }
-
-// var userSelections = ["upperCase","lowerCase","special","numbers"]
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
-
-
 
 function generatePassword (){
   var passLength = prompt("Please enter a number between 8 and 128 to set how long you want your password.")
@@ -34,41 +29,33 @@ function generatePassword (){
       if (choice){
         userSelections.lowerCase=true
         mix.push(lowerCase)
-        console.log(userSelections.lowerCase);
       }
       else{
         userSelections.lowerCase=false
-        console.log(userSelections.lowerCase);
       }
     var choice = confirm("Wanna throw some upper case letters in the mix?")
       if (choice){
         userSelections.upperCase=true
         mix.push(upperCase)
-        console.log(userSelections.upperCase);
       }
       else{
         userSelections.upperCase=false
-        console.log(userSelections.upperCase);
       }
     var choice = confirm("How about numbers?")
       if (choice){
         userSelections.numbers=true
         mix.push(numbers)
-        console.log(userSelections.numbers);
       }
       else{
         userSelections.numbers=false
-        console.log(userSelections.numbers);
       }
     var choice = confirm("Do you want special characters?")
       if (choice){
         userSelections.special=true
         mix.push(special)
-        console.log(userSelections.special);
       }
       else{
         userSelections.special=false
-        console.log(userSelections.special);
       }
       if (userSelections.lowerCase === false && userSelections.upperCase === false && userSelections.numbers === false && userSelections.special === false){
         alert("Please select at least one type of character.")
@@ -84,15 +71,15 @@ function numberGenerator(x){
 for (let i = 0; i < x; i++) {
   var charType = mix[Math.floor(Math.random() * mix.length)]
   newPassword = newPassword.concat(charType[Math.floor(Math.random() * charType.length) ])
-}return newPassword;
 }
-
-
-
+return newPassword;
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+
+//pseudo-coding process:
 //1. create variables to save input from prompts
 //passwordLength - turn string into integer
 //specialCharacters boolean
