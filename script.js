@@ -4,7 +4,8 @@ var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "-", ".", "`", "~", "|", "<", ">", "=", "-", "_"];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-
+var mix = []
+var newPassword = ""
 var userSelections = {
   upperCase: undefined,
   lowerCase: undefined,
@@ -32,6 +33,7 @@ function generatePassword (){
     var choice = confirm("Do you want lowercase characters in your password?")
       if (choice){
         userSelections.lowerCase=true
+        mix.push(lowerCase)
         console.log(userSelections.lowerCase);
       }
       else{
@@ -41,6 +43,7 @@ function generatePassword (){
     var choice = confirm("Wanna throw some upper case letters in the mix?")
       if (choice){
         userSelections.upperCase=true
+        mix.push(upperCase)
         console.log(userSelections.upperCase);
       }
       else{
@@ -50,6 +53,7 @@ function generatePassword (){
     var choice = confirm("How about numbers?")
       if (choice){
         userSelections.numbers=true
+        mix.push(numbers)
         console.log(userSelections.numbers);
       }
       else{
@@ -59,6 +63,7 @@ function generatePassword (){
     var choice = confirm("Do you want special characters?")
       if (choice){
         userSelections.special=true
+        mix.push(special)
         console.log(userSelections.special);
       }
       else{
@@ -69,8 +74,18 @@ function generatePassword (){
         alert("Please select at least one type of character.")
         generatePassword()
       }
-return;}
-
+      numberGenerator(passLength)
+      var generatedPassword = newPassword
+      newPassword = ""
+      mix=[]
+      return generatedPassword
+}
+function numberGenerator(x){
+for (let i = 0; i < x; i++) {
+  var charType = mix[Math.floor(Math.random() * mix.length)]
+  newPassword = newPassword.concat(charType[Math.floor(Math.random() * charType.length) ])
+}return newPassword;
+}
 
 
 
