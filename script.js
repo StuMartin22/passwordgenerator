@@ -6,11 +6,13 @@ var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "-", ".", 
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 var userSelections = {
-  upperCase: false,
-  lowerCase: false,
-  numbers: false,
-  special: false,
+  upperCase: undefined,
+  lowerCase: undefined,
+  numbers: undefined,
+  special: undefined,
 }
+
+// var userSelections = ["upperCase","lowerCase","special","numbers"]
 
 // Write password to the #password input
 function writePassword() {
@@ -29,25 +31,41 @@ function generatePassword (){
     }
     var choice = confirm("Do you want lowercase characters in your password?")
       if (choice){
-        userSelections.lower=true
-        console.log(userSelections.lower);
+        userSelections.lowerCase=true
+        console.log(userSelections.lowerCase);
       }
-      var choice = confirm("Wanna throw some upper case letters in the mix?")
+      else{
+        userSelections.lowerCase=false
+        console.log(userSelections.lowerCase);
+      }
+    var choice = confirm("Wanna throw some upper case letters in the mix?")
       if (choice){
-        userSelections.upper=true
-        console.log(userSelections.upper);
+        userSelections.upperCase=true
+        console.log(userSelections.upperCase);
       }
-      var choice = confirm("How about numbers?")
+      else{
+        userSelections.upperCase=false
+        console.log(userSelections.upperCase);
+      }
+    var choice = confirm("How about numbers?")
       if (choice){
         userSelections.numbers=true
         console.log(userSelections.numbers);
       }
-      var choice = confirm("Do you want special characters?")
+      else{
+        userSelections.numbers=false
+        console.log(userSelections.numbers);
+      }
+    var choice = confirm("Do you want special characters?")
       if (choice){
         userSelections.special=true
         console.log(userSelections.special);
       }
-      if (userSelections.lower === false && userSelections.upper === false && userSelections.numbers === false && userSelections.special === false){
+      else{
+        userSelections.special=false
+        console.log(userSelections.special);
+      }
+      if (userSelections.lowerCase === false && userSelections.upperCase === false && userSelections.numbers === false && userSelections.special === false){
         alert("Please select at least one type of character.")
         generatePassword()
       }
