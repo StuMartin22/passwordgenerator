@@ -17,13 +17,11 @@ This application was designed to allow the user to create a randomized password 
 
 <h1 align="center">Screen Captures and Images</h1>
 
-![Image of portfolio main page. Shows navbar and about me section along with image of self.]( ./assets/images/main%20page.png "PortfolioMain")
+![Image of PasswordGenerator main page. shows box with words 'password generator' above, 'generate a password' above a textbox that says 'your secure password' and then a big red button that says 'generate password' .]( ./assets/images/Password%20Generator%20main.png "PasswordGeneratorMain")
 
-![Image of portfolio. Shows navbar that says 'Portfolio' on far left, then has options for about me, projects, or connect with me. IF on mobile will display 'hamburger' 3 line menu icon instead. Dropdown shows links to email, phone, linked in, github, and resume.]( ./assets/images/NavandDropdown.png "PortfolioDropdown")
+![Image of PasswordGenerator. Shows prompt asking user to select between 3 and 128 characters. ]( ./assets/images/passwordgenerator%20length%20prompt.png "PasswordGeneratorLengthPrompt")
 
-![Image of portfolio. A section mid page that says 'Check out some of my work below!' and shows the top of image cards that contain the title, description, and an image of the application it refers to.]( ./assets/images/CheckOutWork.png "Check Out My Work")
-
-![Image of portfolio. A navigation bar runs across the bottom of the screen that has an icon of a phone, a letter, and then a LinkedIn logo and a Github logo.]( ./assets/images/footerwithLinks.png "Portfolio Footer")
+![Image of Password Generator. The box that appears on the main page but now has a string of randomized characters in the text box area. ]( ./assets/images/Password%20Generator%20randomized.png "Check Out My Work")
 
 ---
 
